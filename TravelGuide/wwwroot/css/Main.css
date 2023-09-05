@@ -1,0 +1,661 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+
+
+
+/*      slider      */
+
+
+
+.slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.slider__inner {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.slider__btn__left {
+    width: 50px;
+    height: 80px;
+    left: 0;
+    top: 450px;
+    position: absolute;
+    font-size: 60px;
+    color: #fff;
+    z-index: 1000;
+    padding-bottom: 10px;
+    background-color: transparent;
+}
+
+
+
+
+.slider__btn__right {
+    width: 50px;
+    height: 80px;
+    right: 0;
+    top: 450px;
+    position: absolute;
+    font-size: 60px;
+    color: #fff;
+    padding-bottom: 10px;
+    background-color: transparent;
+}
+
+
+
+
+
+
+.slider__content {
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.slider__img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+
+/*Адаптация для slider*/
+
+
+
+
+@media (max-width: 786px) {
+    .slider__content{
+        height: 500px;
+    }
+
+
+    .slider__btn__left {
+        top: 250px;
+        font-size: 50px;
+    }
+
+
+    .slider__btn__right {
+        top: 250px;
+        font-size: 50px;
+    }
+
+
+}
+
+
+
+@media (max-width: 519px) {
+    .slider__content {
+        height: 350px;
+    }
+
+
+    .slider__btn__left {
+        top: 200px;
+        
+    }
+
+
+    .slider__btn__right {
+        top: 200px;
+        
+    }
+}
+
+
+
+
+
+
+/*      intro       */
+
+
+.intro {
+    display: flex;
+    justify-content: center;
+    width: 1170px; /* пока нет лайаута */
+    max-width: 95%;
+    margin: 0 auto;
+    margin-top: 150px;
+    
+}
+
+
+.intro__inner {
+    width: 50%;
+    
+}
+
+
+
+.intro__inner__main{
+    padding-top: 70px;
+    font-size: 43px;
+    margin-bottom: 20px;
+    width: 150px;
+}
+
+
+
+.intro__inner__post {
+    
+    font-size: 18px;
+    line-height: 162%;
+    width: 100%;
+}
+
+
+
+.intro__img {
+    width: 50%;
+    
+}
+
+
+
+.intro__img__inner {
+    height: 530px;
+    width: 530px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+
+
+
+/*Адаптация для intro*/
+
+
+
+@media(max-width: 1099px) {
+    .intro {
+        flex-wrap: wrap;
+    }
+
+
+    .intro__inner{
+        margin-bottom: 70px;
+        width: 60%;
+        max-width: 95%;
+    }
+
+
+    .intro__inner__main{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 30px
+    }
+
+
+
+    .intro__inner__post {
+        font-size: 18px;
+        text-align: justify;
+        line-height: 162%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+    .intro__img {
+        width: 70%;
+        max-width: 95%;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+
+    .intro__img__inner {
+        max-width: 100%;
+        
+    }
+}
+
+
+
+
+@media (max-width: 849px){
+    .intro__inner{
+        width: 90%;
+    }
+}
+
+
+
+@media (max-width: 699px){
+    .intro__img__inner{
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 549px) {
+    .intro__img__inner {
+        height: 330px;
+    }
+}
+
+
+
+@media (max-width: 442px) {
+    .intro__img__inner {
+        height: 260px;
+    }
+
+    .intro__inner__main{
+        font-size: 40px;
+    }
+    
+    .intro__inner__post{
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+/*      descp       */
+
+
+
+.descp {
+    position: absolute;
+    background-color: #383950;
+    width: 100%;
+    height: 150px;
+    margin-top: 150px;
+}
+
+
+
+.descp__inner {
+    
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+
+
+.descp__inner__block {
+    width: 30%;
+}
+
+
+
+.descp__inner__block__count{
+    font-size: 56px;
+}
+
+
+
+.descp__inner__block__txt{
+    font-size: 27px;
+}
+
+
+
+
+
+/*  Адаптация для descp     */
+
+
+@media(max-width: 1129px){
+    .descp__inner__block__count {
+        font-size: 50px;
+    }
+
+
+    .descp__inner__block__txt {
+        font-size: 25px;
+    }
+
+}
+
+
+
+@media(max-width: 968px) {
+    .descp__inner__block__count {
+        font-size: 45px;
+    }
+
+
+    .descp__inner__block__txt {
+        font-size: 22px;
+    }
+}
+
+
+
+
+
+@media(max-width: 776px) {
+    .descp__inner__block__count {
+        font-size: 42px;
+    }
+
+
+    .descp__inner__block__txt {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+@media(max-width: 710px) {
+    .descp__inner__block__count {
+        font-size: 42px;
+    }
+
+
+    .descp__inner__block__txt {
+        font-size: 18px;
+    }
+}
+
+
+
+
+@media(max-width: 640px) {
+
+    .descp {
+        
+        height: 130px;
+        
+    }
+
+    .descp__inner__block {
+        width: 33%;
+    }
+
+
+
+    .descp__inner__block__count {
+        font-size: 38px;
+    }
+
+
+    .descp__inner__block__txt {
+        font-size: 16px;
+    }
+}
+
+
+@media(max-width: 558px) {
+    .descp{
+        display: none;
+    }
+}
+
+
+
+/*      attractions     */
+
+
+
+.attractions {
+    margin: 0 auto;
+    margin-top: 400px;
+    width: 1170px;
+    max-width: 95%;
+    margin-bottom: 200px;
+}
+
+
+
+.attractions__txt{
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+
+}
+
+
+
+.card__line{
+    margin-top: 50px;
+    display:flex;
+    justify-content: center;
+}
+
+
+
+.card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+}
+
+
+
+.card__img {
+    background-color: #808080;
+    width: 100%;
+    height: 350px;
+    
+
+}
+
+
+.card__txt {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 22px;
+   
+    height: 50px;
+}
+
+
+.card__mark{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+.card__mark__star{
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+
+
+.attractions__btn__res {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    position: relative;
+    
+
+}
+
+
+
+.attractions__btn {
+    padding: 20px 60px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    background-color: #f5f0ff;
+    transition: all 0.35s ease;
+    color: #383950;
+    border-color: #383950;
+    text-decoration: none;
+    position: absolute;
+}
+
+
+
+.attractions__btn:hover {
+    padding: 25px 65px;
+    font-size: 20px;
+    margin-top: 0px;
+    
+ }
+
+
+
+
+
+/*  Адаптация для attractions     */
+
+
+
+@media (max-width: 1025px){
+    .card__line {
+        flex-wrap: wrap;
+    }
+
+
+
+    .card {
+        width: 40%;
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+@media (max-width: 669px) {
+    .card__line {
+        flex-wrap: wrap;
+    }
+
+
+
+    .card {
+        width: 70%;
+        margin-bottom: 25px;
+    }
+}
+
+
+
+@media (max-width: 425px) {
+    .card__line {
+        flex-wrap: wrap;
+    }
+
+
+
+    .card {
+        width: 80%;
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+/*      hotel       */
+
+
+
+
+.hotel {
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: 1170px;
+    max-width: 95%;
+    text-align: center;
+}
+
+
+
+
+
+.hotel__txt{
+    margin-bottom: 25px;
+    font-size: 55px;
+}
+
+
+
+
+.hotel__inner{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+
+
+
+.hotel__inner__img {
+    background-color: #808080;
+    width: 30%;
+    height: 300px;
+    margin: 5px;
+}
+
+
+
+
+/*  Адаптация для hotel  */
+
+
+
+@media (max-width: 695px) {
+    .hotel__inner__img{
+        width: 40%;
+    }
+}
+
+@media (max-width: 590px) {
+    .hotel__inner__img{
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 525px) {
+    .hotel__inner__img {
+        width: 70%;
+    }
+}
+
+
+
+

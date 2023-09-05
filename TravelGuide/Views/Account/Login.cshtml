@@ -1,0 +1,46 @@
+﻿@model LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="~/css/Login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="container">
+
+        <a style="text-decoration:none;" asp-controller="Main" asp-action="Main"><h1 class="container__title">Путеводитель</h1></a>
+
+        <form class="sign-up" asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+            <h2 class="container__title">Авторизация</h2>
+
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="sign-u__setting textbox">
+                <div class="sign-up__inner" data-index="1">
+                    <label class="form__lab" asp-for="Email">Введите Email</label>
+                    <input class="form__field" type="text" asp-for="Email" readonly
+                           onfocus="this.removeAttribute('readonly')" />
+                    <span asp-validation-for="Email" />
+                </div>
+                <div class="sign-up__inner textbox" data-index="2">
+                    <label class="form__lab" asp-for="Password">Введите пароль</label>
+                    <input class="form__field" asp-for="Password" readonly
+                           onfocus="this.removeAttribute('readonly')" />
+                    <span asp-validation-for="Password" />
+                </div>
+                <input class="sign-up__btn" type="submit" value="Войти" />
+                <div class="create__acc">У вас нет аккаунта? <a class="create__acc__link" asp-controller="Account" asp-action="Register"> зарегистрироваться</a></div>
+            </div>
+        </form>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script><!--подключение jquery-->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/Reg.js"></script>
+</body>
+</html>

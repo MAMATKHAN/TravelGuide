@@ -1,0 +1,152 @@
+﻿@model PlaceViewModel
+@{
+}
+@section Styles{
+	<link rel="stylesheet" href="~/css/Place.css">
+}
+
+<div class="color__block"></div>
+	
+	<div class="containzer">
+		
+			<div class="hotel__rating">
+				<h1 class="hotel__name">@Model.Placemark.Name</h1>
+				<div class="rating">10</div>
+			</div>
+
+			
+
+
+			<div class="hotel__info">
+				<div class="slider">
+					<div class="slider__inner">
+						<button class="slider__btn__left" id="left__slide"><</button>
+						<div class="slider__content">
+							@foreach (var imagePath in Model.Placemark.Images.Split("||"))
+							{
+								<img class="slider__img" src=@imagePath>
+							}
+						</div>
+						<button class="slider__btn__right" id="right__slide">></button>
+					</div>
+				</div>
+
+				<div class="card">
+					<h1 class="card__name">@Model.Placemark.Name</h1>
+
+					<div class="card__inner">
+						<div class="hotel__price">
+							<div class="price__info">начальная цена</div>
+						<div class="price">@Convert.ToInt32(Model.Placemark.Price)</div>
+							<div class="price__info">за номер в сутки</div>
+						
+						</div>
+						<div class="hotel__number">
+							<div class="hotel__num">
+								<div class="num__text">Номер:</div>
+							@Model.Placemark.Number
+							</div>
+							<h3>
+							<div class="num__text">Расписание:</div>
+								@Model.Placemark.WorkSchedule
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="choose">
+				<div class="choose__desc">
+					<div class="choose__desc__name">Описание</div>
+					<div class="curse curse__active"></div>
+				</div>
+				<div class="choose__comm">
+					<div class="choose__comm__name">Отзывы</div>
+					<div class="curse"></div>
+				</div>
+			</div>
+
+
+
+			<div class="hotel__about active animation">
+				<div class="hotel__about__txt">Описание</div>
+				<div class="hotel__about__info">
+					<p class="hotel__desc">@Model.Placemark.Description</p>
+					<span class="loc" data-place-longitude=@Model.Placemark.Longitude data-place-latitude=@Model.Placemark.Latitude></span>
+					<div id="map"></div>
+				</div>
+			</div>	
+			
+		
+			<div class="hotel__comm ">
+				<div class="hotel__comm__left">
+					<div class="rate__pos">
+						<div class="hotel__comm__left__txt">Рейтинг</div>
+						<div class="hotel__comm__left__rate">7</div>
+					</div>
+					
+					<div class="hotel__comm__line"></div>
+
+					<div class="hotel__get__txt">Оставьте отзыв</div>
+
+					@if (User.Identity.IsAuthenticated)
+					{
+						<div class="get__comment">
+							<form method="post">
+								<div class="get__comment__name">Отзывы</div>
+								<input name="text" class="get__comment__text">
+								<input oninput="result.value=ParseInt(rating.value)" name="rating" type="range" min="0" max="10" value="0" class="get__comment__mark">
+								<input name="placeId" type="hidden" value=@Model.Placemark.PlacemarkId />
+								<output name="result">0</output><br/>
+								<input type="submit" class="get__comment__btn" value="Оставить отзыв" />
+							</form>
+						</div>
+					}
+					else
+					{
+						<a class="reg__btn" asp-controller="Account" asp-action="Login">Пожалуйста войдите чтобы оставить отзыв</a>
+					}
+
+						
+				</div>
+
+
+				<div class="hotel__comm__right">
+					<div class="hotel__comm__right__txt">Отзывы</div>
+
+					<div class="hotel__comm__line"></div>
+
+					@foreach(var review in Model.Reviews){
+							<div class="comment__list">
+								<div class="comment__list__inner">
+									<div class="comment__list__info">
+										<h3 class="comment__list__name">@review.User.FullName</h3>
+									</div>
+									<h3 class="comment__list__date">@review.Date.Value.Date.ToLongDateString()</h3>
+								</div>
+								<h3 class="comment__list__rating">@review.Rating</h3>
+								<h3 class="comment__list__text">@review.Text</h3>
+								
+							</div>
+							<div class="hotel__comm__line"></div>
+						}
+				</div>
+			</div>
+
+
+
+
+
+	</div>
+
+	
+
+
+@section scripts{
+	<script src="https://mapgl.2gis.com/api/js/v1"></script>
+	<script src="https://unpkg.com/@@2gis/mapgl-directions@@^2/dist/directions.js"></script>
+	<script src="~/js/Placemap.js"></script>
+	<script src="~/js/site.js"></script>
+}
